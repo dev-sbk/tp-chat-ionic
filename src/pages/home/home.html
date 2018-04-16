@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Chat App
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="doLogout()" *ngIf="auth.chatUser">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <message [messages]="messages" [user]="auth.chatUser" *ngIf="messages && auth.chatUser"></message>
+
+  <sendform (onSend)="doSend($event)" [user]="auth.chatUser"></sendform>
+
+  <button ion-button block (click)="doLogin()" *ngIf="!auth.chatUser">
+    LOGIN WITH GOOGLE
+  </button>
+
+</ion-content>

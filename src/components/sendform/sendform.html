@@ -1,0 +1,15 @@
+<ion-grid *ngIf="user">
+  <ion-row>
+    <ion-col col-8>
+      <ion-item>
+        <ion-input type="text" value="" [(ngModel)]="text"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-4>
+      <button ion-button color="primary" style="width: 100%" (click)="doSend()">
+        <ion-icon name="text"></ion-icon>
+        &nbsp;Send
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
